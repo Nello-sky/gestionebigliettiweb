@@ -48,8 +48,8 @@ public class ExecuteVisualizzaBigliettoServlet extends HttpServlet {
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-		
-		request.getRequestDispatcher("/biglietto/show.jsp").forward(request, response);
+		//int count = 100; 
+		request.getRequestDispatcher("/biglietto/show2.jsp").forward(request, response);
 	}
 
 }

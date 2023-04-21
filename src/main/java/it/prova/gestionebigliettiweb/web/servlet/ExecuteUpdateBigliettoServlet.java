@@ -60,7 +60,7 @@ public class ExecuteUpdateBigliettoServlet extends HttpServlet {
 			
 			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
 			request.setAttribute("BigliettoToUpdate", MyServiceFactory.getBigliettoServiceInstance().caricaSingoloElemento(idBigliettoToUpdate));
-			request.getRequestDispatcher("/biglietto/edit.jsp").forward(request, response);
+			request.getRequestDispatcher("/biglietto/edit2.jsp").forward(request, response);
 			return;
 		}
 		} catch (Exception e) {

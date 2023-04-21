@@ -7,7 +7,7 @@
 		<!-- Custom styles per le features di bootstrap 'Columns with icons' -->
 	   <link href="./assets/css/features.css" rel="stylesheet">
 	   
-	   <title>Gestione Articoli</title>
+	   <title>Gestione Biglietti</title>
 	 </head>
 	   <body class="d-flex flex-column h-100">
 	   		
@@ -67,7 +67,7 @@
 			        </div>
 			        <h2>Lista Elementi</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-			        <a href="ListArticoliServlet" class="icon-link">
+			        <a href="ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
@@ -78,7 +78,7 @@
 			        </div>
 			        <h2>Inserisci Nuovo</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-			        <a href="PrepareInsertArticoloServlet" class="icon-link">
+			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>

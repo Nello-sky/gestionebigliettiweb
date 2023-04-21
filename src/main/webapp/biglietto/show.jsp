@@ -2,6 +2,7 @@
 <%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
  <head>
@@ -25,8 +26,9 @@
 					    <div class='card-header'>
 					        <h5>Visualizza dettaglio</h5>
 					    </div>
-					     <% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("visualizza_biglietti_attr"); %>
-					    
+					 <!--    <% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("visualizza_biglietti_attr"); %> -->
+					    <c:import var="displayfile" url="coretag_jsp32.jsp">
+                        </c:import>
 					
 					    <div class='card-body'>
 					    	<dl class="row">

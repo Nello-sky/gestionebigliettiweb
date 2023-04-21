@@ -30,7 +30,7 @@ public class PrepareInsertBigliettoServlet extends HttpServlet {
 
 		//metto un bean 'vuoto' in request perché per la pagina risulta necessario
 		request.setAttribute("insert_biglietto_attr", new Biglietto());
-		request.getRequestDispatcher("/biglietto/insert.jsp").forward(request, response);
+		request.getRequestDispatcher("/biglietto/insert2.jsp").forward(request, response);
 
 	}
 

@@ -39,7 +39,7 @@ public class PrepareDeleteBigliettoServlet extends HttpServlet {
 		}
 
 		try {
-			request.setAttribute("ArticoloToDelete", MyServiceFactory.getBigliettoServiceInstance()
+			request.setAttribute("BigliettoToDelete", MyServiceFactory.getBigliettoServiceInstance()
 					.caricaSingoloElemento(Long.parseLong(idBigliettoToDelete)));
 		} catch (Exception e) {
 			// qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
@@ -51,7 +51,7 @@ public class PrepareDeleteBigliettoServlet extends HttpServlet {
 
 //		
 
-		request.getRequestDispatcher("/biglietto/delete.jsp").forward(request, response);
+		request.getRequestDispatcher("/biglietto/delete2.jsp").forward(request, response);
 	}
 
 }

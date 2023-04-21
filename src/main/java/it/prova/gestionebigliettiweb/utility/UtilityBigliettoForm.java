@@ -25,12 +25,12 @@ public class UtilityBigliettoForm {
 
 	
 	
-	public static boolean validateBigliettoBean(Biglietto articoloToBeValidated) {
+	public static boolean validateBigliettoBean(Biglietto bigliettoToBeValidated) {
 		// prima controlliamo che non siano vuoti i parametri
-		if (StringUtils.isBlank(articoloToBeValidated.getProvenienza())
-				|| StringUtils.isBlank(articoloToBeValidated.getDestinazione())
-				|| articoloToBeValidated.getPrezzo() == null || articoloToBeValidated.getPrezzo() < 1
-				|| articoloToBeValidated.getData() == null) {
+		if (StringUtils.isBlank(bigliettoToBeValidated.getProvenienza())
+				|| StringUtils.isBlank(bigliettoToBeValidated.getDestinazione())
+				|| bigliettoToBeValidated.getPrezzo() == null || bigliettoToBeValidated.getPrezzo() < 1
+				|| bigliettoToBeValidated.getData() == null) {
 			return false;
 		}
 		return true;
