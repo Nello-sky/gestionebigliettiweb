@@ -20,26 +20,26 @@ import it.prova.gestionebigliettiweb.utility.UtilityBigliettoForm;
 @WebServlet("/ExecuteUpdateBigliettoServlet")
 public class ExecuteUpdateBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteUpdateBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteUpdateBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idBigliettoToCheck = request.getParameter("idUpdate");
-		
+
 		if (!NumberUtils.isCreatable(idBigliettoToCheck)) {
 			// qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-		
+
 		// estraggo input
 		String provenienzaInputParam = request.getParameter("provenienza");
 		String destinazioneInputParam = request.getParameter("destinazione");
@@ -48,21 +48,22 @@ public class ExecuteUpdateBigliettoServlet extends HttpServlet {
 		Long idBigliettoToUpdate = Long.parseLong(request.getParameter("idUpdate"));
 		// preparo un bean (che mi serve sia per tornare in pagina
 		// che per inserire) e faccio il binding dei parametri
-		
-		//commentare
+
+		// commentare
 		Biglietto bigliettoInstance = UtilityBigliettoForm.createBigliettoFromParams(provenienzaInputParam,
 				destinazioneInputParam, dataStringParam, prezzoInputStringParam);
 		bigliettoInstance.setId(idBigliettoToUpdate);
-		
+
 		// se la validazione non risulta ok
 		try {
-		if (!UtilityBigliettoForm.validateBigliettoBean(bigliettoInstance)) {
-			
-			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
-			request.setAttribute("BigliettoToUpdate", MyServiceFactory.getBigliettoServiceInstance().caricaSingoloElemento(idBigliettoToUpdate));
-			request.getRequestDispatcher("/biglietto/edit2.jsp").forward(request, response);
-			return;
-		}
+			if (!UtilityBigliettoForm.validateBigliettoBean(bigliettoInstance)) {
+
+				request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
+				request.setAttribute("BigliettoToUpdate",
+						MyServiceFactory.getBigliettoServiceInstance().caricaSingoloElemento(idBigliettoToUpdate));
+				request.getRequestDispatcher("/biglietto/edit2.jsp").forward(request, response);
+				return;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

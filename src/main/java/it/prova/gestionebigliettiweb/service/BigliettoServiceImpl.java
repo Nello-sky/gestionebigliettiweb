@@ -8,7 +8,6 @@ import it.prova.gestionebigliettiweb.dao.BigliettoDAO;
 import it.prova.gestionebigliettiweb.model.Biglietto;
 import it.prova.gestionebigliettiweb.web.listener.LocalEntityManagerFactoryListener;
 
-
 public class BigliettoServiceImpl implements BigliettoService {
 
 	private BigliettoDAO bigliettoDao;
@@ -117,7 +116,6 @@ public class BigliettoServiceImpl implements BigliettoService {
 
 			bigliettoDao.setEntityManager(entityManager);
 
-
 			bigliettoDao.delete(bigliettoDao.findOne(idBigliettoToRemove));
 
 			entityManager.getTransaction().commit();
@@ -138,7 +136,6 @@ public class BigliettoServiceImpl implements BigliettoService {
 		try {
 
 			bigliettoDao.setEntityManager(entityManager);
-
 
 			return bigliettoDao.findByExample(input);
 

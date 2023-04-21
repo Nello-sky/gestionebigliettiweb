@@ -18,16 +18,16 @@ import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 @WebServlet("/ExecuteVisualizzaBigliettoServlet")
 public class ExecuteVisualizzaBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteVisualizzaBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteVisualizzaBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idBigliettoParam = request.getParameter("idBiglietto");
 
@@ -48,7 +48,7 @@ public class ExecuteVisualizzaBigliettoServlet extends HttpServlet {
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-		//int count = 100; 
+		// int count = 100;
 		request.getRequestDispatcher("/biglietto/show2.jsp").forward(request, response);
 	}
 

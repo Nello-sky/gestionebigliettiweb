@@ -15,7 +15,7 @@ public interface IBaseDAO<T> {
 	public void insert(T input) throws Exception;
 
 	public void delete(T input) throws Exception;
-	
+
 	List<T> findByExample(T input) throws Exception;
 
 	// questo mi serve per l'injection

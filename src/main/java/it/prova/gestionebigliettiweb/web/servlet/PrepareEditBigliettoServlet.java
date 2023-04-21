@@ -18,18 +18,18 @@ import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 @WebServlet("/PrepareEditBigliettoServlet")
 public class PrepareEditBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PrepareEditBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public PrepareEditBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String idBigliettoToUpdate = request.getParameter("idBiglietto");
 
 		if (!NumberUtils.isCreatable(idBigliettoToUpdate)) {

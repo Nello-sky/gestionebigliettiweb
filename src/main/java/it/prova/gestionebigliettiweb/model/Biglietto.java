@@ -13,81 +13,76 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-
 @Entity
 @Table(name = "biglietto")
 public class Biglietto {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "provenienza")
+	private String provenienza;
+	@Column(name = "destinazione")
+	private String destinazione;
+	@Column(name = "data")
+	private LocalDate data;
+	@Column(name = "prezzo")
+	private Integer prezzo;
 
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "id")
-		private Long id;
-		@Column(name = "provenienza")
-		private String provenienza;
-		@Column(name = "destinazione")
-		private String destinazione;
-		@Column(name = "data")
-		private LocalDate data;
-		@Column(name = "prezzo")
-		private Integer prezzo;
+	// campi per le time info del record
+	@CreationTimestamp
+	private LocalDateTime createDateTime;
+	@UpdateTimestamp
+	private LocalDateTime updateDateTime;
 
-		// campi per le time info del record
-		@CreationTimestamp
-		private LocalDateTime createDateTime;
-		@UpdateTimestamp
-		private LocalDateTime updateDateTime;
-		
-		public Biglietto() {
-		}
-		
-		public Biglietto(String provenienza, String destinazione) {
-			super();
-			this.provenienza = provenienza;
-			this.destinazione = destinazione;
-		}
+	public Biglietto() {
+	}
 
-		public Long getId() {
-			return id;
-		}
+	public Biglietto(String provenienza, String destinazione) {
+		super();
+		this.provenienza = provenienza;
+		this.destinazione = destinazione;
+	}
 
-		public void setId(Long id) {
-			this.id = id;
-		}
+	public Long getId() {
+		return id;
+	}
 
-		public String getProvenienza() {
-			return provenienza;
-		}
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-		public void setProvenienza(String provenienza) {
-			this.provenienza = provenienza;
-		}
+	public String getProvenienza() {
+		return provenienza;
+	}
 
-		public String getDestinazione() {
-			return destinazione;
-		}
+	public void setProvenienza(String provenienza) {
+		this.provenienza = provenienza;
+	}
 
-		public void setDestinazione(String destinazione) {
-			this.destinazione = destinazione;
-		}
+	public String getDestinazione() {
+		return destinazione;
+	}
 
-		public LocalDate getData() {
-			return data;
-		}
+	public void setDestinazione(String destinazione) {
+		this.destinazione = destinazione;
+	}
 
-		public void setData(LocalDate data) {
-			this.data = data;
-		}
+	public LocalDate getData() {
+		return data;
+	}
 
-		public Integer getPrezzo() {
-			return prezzo;
-		}
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
 
-		public void setPrezzo(Integer prezzo) {
-			this.prezzo = prezzo;
-		}
-		
-		
-		
+	public Integer getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(Integer prezzo) {
+		this.prezzo = prezzo;
+	}
+
 }
-

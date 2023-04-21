@@ -16,19 +16,19 @@ import it.prova.gestionebigliettiweb.model.Biglietto;
 @WebServlet("/PrepareInsertBigliettoServlet")
 public class PrepareInsertBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PrepareInsertBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public PrepareInsertBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		//metto un bean 'vuoto' in request perché per la pagina risulta necessario
+		// metto un bean 'vuoto' in request perché per la pagina risulta necessario
 		request.setAttribute("insert_biglietto_attr", new Biglietto());
 		request.getRequestDispatcher("/biglietto/insert2.jsp").forward(request, response);
 

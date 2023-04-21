@@ -9,8 +9,8 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 @WebListener
-public class LocalEntityManagerFactoryListener implements ServletContextListener{
-	
+public class LocalEntityManagerFactoryListener implements ServletContextListener {
+
 	private static EntityManagerFactory entityManagerFactory;
 
 	public void contextInitialized(ServletContextEvent sce) {

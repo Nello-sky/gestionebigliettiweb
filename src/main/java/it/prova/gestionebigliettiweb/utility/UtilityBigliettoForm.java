@@ -9,7 +9,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.gestionebigliettiweb.model.Biglietto;
 
 public class UtilityBigliettoForm {
-	
+
 	public static Biglietto createBigliettoFromParams(String provenienzaInputParam, String destinazioneInputParam,
 			String dataInputStringParam, String prezzoStringParam) {
 
@@ -23,8 +23,6 @@ public class UtilityBigliettoForm {
 		return result;
 	}
 
-	
-	
 	public static boolean validateBigliettoBean(Biglietto bigliettoToBeValidated) {
 		// prima controlliamo che non siano vuoti i parametri
 		if (StringUtils.isBlank(bigliettoToBeValidated.getProvenienza())

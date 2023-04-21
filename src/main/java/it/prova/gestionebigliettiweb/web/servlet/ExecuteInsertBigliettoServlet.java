@@ -18,19 +18,18 @@ import it.prova.gestionebigliettiweb.utility.UtilityBigliettoForm;
 @WebServlet("/ExecuteInsertBigliettoServlet")
 public class ExecuteInsertBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteInsertBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteInsertBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+
 		// estraggo input
 		String provenienzaInputParam = request.getParameter("provenienza");
 		String destinazioneInputParam = request.getParameter("destinazione");

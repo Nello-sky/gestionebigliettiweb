@@ -18,26 +18,27 @@ import it.prova.gestionebigliettiweb.utility.UtilityBigliettoForm;
 @WebServlet("/ExecuteSearchBigliettoServlet")
 public class ExecuteSearchBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteSearchBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteSearchBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		// estraggo input
-				String provenienzaInputParam = request.getParameter("provenienza");
-				String destinazioneInputParam = request.getParameter("destinazione");
-				String prezzoInputStringParam = request.getParameter("prezzo");
-				String dataStringParam = request.getParameter("data");
-				
-				//commentare
-				Biglietto bigliettoInstance = UtilityBigliettoForm.createBigliettoFromParams(provenienzaInputParam,
-						destinazioneInputParam, dataStringParam, prezzoInputStringParam);
+		String provenienzaInputParam = request.getParameter("provenienza");
+		String destinazioneInputParam = request.getParameter("destinazione");
+		String prezzoInputStringParam = request.getParameter("prezzo");
+		String dataStringParam = request.getParameter("data");
+
+		// commentare
+		Biglietto bigliettoInstance = UtilityBigliettoForm.createBigliettoFromParams(provenienzaInputParam,
+				destinazioneInputParam, dataStringParam, prezzoInputStringParam);
 		try {
 			MyServiceFactory.getBigliettoServiceInstance().cercaByExample(bigliettoInstance);
 			request.setAttribute("listaBigliettiAttribute", MyServiceFactory.getBigliettoServiceInstance().listAll());

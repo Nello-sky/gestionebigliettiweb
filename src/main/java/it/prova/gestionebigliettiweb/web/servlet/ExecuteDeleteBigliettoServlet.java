@@ -19,18 +19,17 @@ import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 @WebServlet("/ExecuteDeleteBigliettoServlet")
 public class ExecuteDeleteBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteDeleteBigliettoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteDeleteBigliettoServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 
 		String idBigliettoToDelete = request.getParameter("idDelete");
 

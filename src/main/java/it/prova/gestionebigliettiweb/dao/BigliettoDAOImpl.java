@@ -12,8 +12,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import it.prova.gestionebigliettiweb.model.Biglietto;
 
-public class BigliettoDAOImpl implements BigliettoDAO{
-	
+public class BigliettoDAOImpl implements BigliettoDAO {
+
 	private EntityManager entityManager;
 
 	@Override
@@ -80,12 +80,10 @@ public class BigliettoDAOImpl implements BigliettoDAO{
 			whereClauses.add("b.data >= :data ");
 			paramaterMap.put("data", example.getData());
 		}
-		
-		
-		queryBuilder.append(!whereClauses.isEmpty()?" and ":"");
+
+		queryBuilder.append(!whereClauses.isEmpty() ? " and " : "");
 		queryBuilder.append(StringUtils.join(whereClauses, " and "));
 		TypedQuery<Biglietto> typedQuery = entityManager.createQuery(queryBuilder.toString(), Biglietto.class);
-
 
 		for (String key : paramaterMap.keySet()) {
 			typedQuery.setParameter(key, paramaterMap.get(key));

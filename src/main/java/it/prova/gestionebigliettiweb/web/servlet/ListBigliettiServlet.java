@@ -16,14 +16,14 @@ import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 @WebServlet("/ListBigliettiServlet")
 public class ListBigliettiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ListBigliettiServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ListBigliettiServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,7 +31,7 @@ public class ListBigliettiServlet extends HttpServlet {
 		try {
 			request.setAttribute("listaBigliettiAttribute", MyServiceFactory.getBigliettoServiceInstance().listAll());
 		} catch (Exception e) {
-			//qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
+			// qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -39,6 +39,5 @@ public class ListBigliettiServlet extends HttpServlet {
 		}
 		request.getRequestDispatcher("/biglietto/results.jsp").forward(request, response);
 	}
-
 
 }
