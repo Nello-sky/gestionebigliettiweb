@@ -3,14 +3,15 @@
 function validateInsert() {
 
 	// catturo le variabili di controllo, le mando tutte in UpperCase...
-	let provenienzaValue = document.getElementById("provenienzaId").value;
-	let destinazioneValue = document.getElementById("destinazioneId").value;
-	let prezzoValue = document.getElementById("prezzoId").value;
-	let dataValue = document.getElementById("dataId").value;
+	let provenienza = document.getElementById("provenienzaId");
+	let destinazione = document.getElementById("destinazioneId");
+	let prezzo = document.getElementById("prezzoId");
+	let data = document.getElementById("dataId");
 
 
 	//check void arguments
-	if (provenienzaValue == "") {
+	if (provenienza.value.trim() == "") {
+		provenienza.focus();
 		document.getElementById("provenienzaId").style.border = "3px solid red";
 
 	}
@@ -19,7 +20,8 @@ function validateInsert() {
 	}
 	
 
-	if (destinazioneValue == "") {
+	if (destinazione.value.trim() == "") {
+		destinazione.focus();
 		document.getElementById("destinazioneId").style.border = "3px solid red";
 
 	}
@@ -27,7 +29,8 @@ function validateInsert() {
 		document.getElementById("destinazioneId").style.border = "3px solid green";
 	}
 	
-	if (prezzoValue == "") {
+	if (prezzo.value.trim()== "") {
+		prezzo.focus();
 		document.getElementById("prezzoId").style.border = "3px solid red";
 
 	}
@@ -35,7 +38,8 @@ function validateInsert() {
 		document.getElementById("prezzoId").style.border = "3px solid green";
 	}
 	
-	if (dataValue == "") {
+	if (data.value.trim() == "") {
+		data.focus();
 		document.getElementById("dataId").style.border = "3px solid red";
 	}
 	else {
@@ -43,10 +47,8 @@ function validateInsert() {
 	}
 	
 	
-	if (provenienzaValue == "" || destinazioneValue == "" || prezzoValue == "" || dataValue == "") {
+	if (provenienza.value.trim() == "" || destinazione.value.trim() == "" || prezzo.value.trim() == "" || data.value.trim()  == "") {
 		return false;
-        // document.getElementById("insertForm").action  = "ExecuteInsertBigliettoServlet";
-       //  document.getElementById("insertForm").submit();
 	}
 	
    
@@ -54,4 +56,7 @@ function validateInsert() {
 }
 
 
+function validateBigliettoForm() {
 
+
+}
