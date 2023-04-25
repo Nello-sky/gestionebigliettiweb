@@ -52,7 +52,7 @@ public class PrepareEditBigliettoServlet extends HttpServlet {
 
 //		
 
-		request.getRequestDispatcher("/biglietto/edit2.jsp").forward(request, response);
+		request.getRequestDispatcher("/biglietto/edit3.jsp").forward(request, response);
 	}
 
 }

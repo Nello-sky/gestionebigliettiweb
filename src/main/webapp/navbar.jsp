@@ -23,6 +23,7 @@
               <li><a class="dropdown-item" href="ListBigliettiServlet">Lista Elementi</a></li>
               <li><a class="dropdown-item" href="PrepareInsertBigliettoServlet">Inserisci Nuovo</a></li>
               <li><a class="dropdown-item" href="PrepareSearchBigliettoServlet">Ricerca</a></li>
+              <li><a class="dropdown-item" href="/biglietto/landing.jsp">TestJS</a></li>
             </ul>
           </li>
         </ul>

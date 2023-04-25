@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+ 	
 <!-- Common imports in pages -->
 <jsp:include page="../header.jsp" />
    
@@ -49,9 +49,9 @@
 					<h6 class="card-title">
 						I campi con <span class="text-danger">*</span> sono obbligatori
 					</h6>
-					<form method="post" action="ExecuteInsertBigliettoServlet" class="row g-3" novalidate="novalidate">
-							
-								 <c:set var="bigliettoInPagina" value="${requestScope.insert_biglietto_attr}" />
+						<form method="post" name="insertForm" action="ExecuteInsertBigliettoServlet" class="row g-3" novalidate="novalidate" onSubmit="return validateInsert()" >	
+						
+								<c:set var="bigliettoInPagina" value="${requestScope.insert_biglietto_attr}" />
 							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">provenienza <span class="text-danger">*</span></label>
@@ -78,9 +78,10 @@
 								</div>
 								
 								
-							<div class="col-12">
-								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">Conferma</button>
-							</div>
+								<br>
+								<div class="col-12">
+									<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary" >Conferma</button>
+								</div>
 		
 						</form>
 
@@ -98,6 +99,9 @@
 	</main>
 	<!-- Footer -->
 	<jsp:include page="../footer.jsp" />
+	
+		<script src="biglietto/JSUtil.js"></script>
+	
 	
 	</body>
 </html>

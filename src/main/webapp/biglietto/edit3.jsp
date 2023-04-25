@@ -42,31 +42,31 @@
 							<h6 class="card-title">I campi con <span class="text-danger">*</span> sono obbligatori</h6>
 		
 		
-							<form method="post" action="ExecuteUpdateBigliettoServlet" class="row g-3" novalidate="novalidate">
+							<form method="post" action="ExecuteUpdateBigliettoServlet" class="row g-3" novalidate="novalidate" onSubmit="return validateInsert()">
 							
 								<c:set var="bigliettoInPagina" value="${requestScope.BigliettoToUpdate}" />
 							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">Provenienza <span class="text-danger">*</span></label>
-									<input type="text" name="provenienza" id="provenienza" class="form-control"
+									<input type="text" name="provenienza" id="provenienzaId" class="form-control"
 										value="<c:out value="${not empty bigliettoInPagina.provenienza ? bigliettoInPagina.provenienza : ''}" />" required>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="destinazione" class="form-label">Destinazione <span class="text-danger">*</span></label>
-									<input type="text" name="destinazione" id="destinazione" class="form-control"   
+									<input type="text" name="destinazione" id="destinazioneId" class="form-control"   
 										value="<c:out value="${not empty bigliettoInPagina.destinazione ? bigliettoInPagina.destinazione : ''}" />" required>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="prezzo" class="form-label">Prezzo <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="prezzo" id="prezzo"  
+									<input type="number" class="form-control" name="prezzo" id="prezzoId"  
 									value="<c:out value="${not empty bigliettoInPagina.prezzo ? bigliettoInPagina.prezzo : ''}" />" required>
 								</div>
 								
 								<div class="col-md-3">
 									<label for="data" class="form-label">Data<span class="text-danger">*</span></label>
-									<input class="form-control"  name="data" id="data" type="date"  title="formato : gg/mm/aaaa" 
+									<input class="form-control"  name="data" id="dataId" type="date"  title="formato : gg/mm/aaaa" 
 										value="<c:out value="${not empty bigliettoInPagina.data ? bigliettoInPagina.data.format(DateTimeFormatter.ofPattern('yyyy-MM-dd')) : ''}" />" required/>
 								</div>
 								
@@ -92,5 +92,6 @@
 			
 			<!-- Footer -->
 			<jsp:include page="../footer.jsp" />
+			<script src="biglietto/JSUtil.js"></script>
 	  </body>
 </html>
